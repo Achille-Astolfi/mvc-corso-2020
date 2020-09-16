@@ -16,7 +16,11 @@
 	     Controller --%>
 	<%-- Quello che scrivo tra ${ e } è uno script nell'EL (Expression Language) di JSP --%>
 	<h1>${ viewBean.title }</h1>
-	<p>Ciao ${ viewBean.userName }, benvenuto nel tuo cruscotto.
+	<%-- # è il segnaposto comunente usato quando ancora non si è decisa la URL del collegamento --%>
+	<p>Sei collegato come ${ viewBean.userName }, <a href="#">cambia utente</a>.
+	<%-- in EL posso concatenare le proprietà con l'operatore . --%>
+	<p>Ciao ${ viewBean.user.firstName }. Il tuo cognome è ${ viewBean.user.lastName }
+	    e il tuo sesso ISO è ${ viewBean.user.isoSex }.
 	</div>
 
 	<script type="text/javascript" src="${ resources }/jquery/3.4.1/jquery.js"></script>

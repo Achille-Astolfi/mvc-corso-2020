@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.corso.domain.User;
 import com.example.corso.viewmodel.DashboardViewBean;
 
 @Controller
@@ -21,7 +22,12 @@ public class DashboardController {
 		// Service
 		DashboardViewBean viewBean = new DashboardViewBean();
 		viewBean.setTitle("Titolo del cruscotto");
-		viewBean.setUserName("Achille Astolfi");
+		viewBean.setUserName("AstolfiA");
+		User user = new User();
+		user.setFirstName("Achille");
+		user.setLastName("Astolfi");
+		user.setIsoSex(1);
+		viewBean.setUser(user);
 		// Infine si collega il viewBean con il model usando il metodo addAttribute con due argomenti
 		// Il primo argomento è il nome che voglio dare al mio attribute, standardizziamo in viewBean
 		// Il secondo è il valore che voglio trasferire alla view

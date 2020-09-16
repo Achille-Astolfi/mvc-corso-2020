@@ -1,5 +1,7 @@
 package com.example.corso.viewmodel;
 
+import com.example.corso.domain.User;
+
 /**
  * View Bean della view dashboard.
  * 
@@ -14,11 +16,22 @@ public class DashboardViewBean {
 
 	// qui posso mettere per esempio un riferimento all'utente identificato
 	// normalmente sarebbe un tipo strutturato come User, Role, ecc.
+	// cambio di specifica: non cambia né tipo né nome, cambia solo la semantica
 	private String userName;
 	// esempio: un titolo per il mio cruscotto
 	private String title;
 	// e qui posso andare avanti, per esempio List<Portlet> o cose del genere
 	// per indicare un elenco di riquadri da inserire nel cruscotto
+	// nuova specifica; creo il nuovo campo e genero getter e setter
+	private User user;
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public String getUserName() {
 		return userName;
