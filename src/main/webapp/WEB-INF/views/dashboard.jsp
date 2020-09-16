@@ -14,8 +14,9 @@
 	<%-- Questa istruzione per il preprocessor (Tomcat) ha come conseguenza di invocare il metodo
 	     getTitle() nell'attributo identificato dal nome viewBean, così come è scritto nel 
 	     Controller --%>
+	<%-- Quello che scrivo tra ${ e } è uno script nell'EL (Expression Language) di JSP --%>
 	<h1>${ viewBean.title }</h1>
-	<p>Benvenuto nel tuo cruscotto.
+	<p>Ciao ${ viewBean.userName }, benvenuto nel tuo cruscotto.
 	</div>
 
 	<script type="text/javascript" src="${ resources }/jquery/3.4.1/jquery.js"></script>

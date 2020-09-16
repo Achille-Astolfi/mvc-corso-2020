@@ -9,7 +9,7 @@ import com.example.corso.viewmodel.DashboardViewBean;
 
 @Controller
 @RequestMapping("/dashboard")
-public class DasboardController {
+public class DashboardController {
 
 	// se vogliamo usare un model, il modo a mio avviso più rapido per usarlo è
 	// introdurre un parametro di tipo Model
