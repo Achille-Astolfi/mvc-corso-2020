@@ -13,55 +13,61 @@
 </head>
 <body>
 	<div class="container">
-		<form action="#" method="post">
+		<form:form action="#" method="post" modelAttribute="formBean">
 			<div class="form-group">
-				<label for="firstName">Nome</label> <input type="text"
-					class="form-control" id="firstName" placeholder="Il tuo nome">
-			</div>
-			<div class="form-group">
-				<label for="lastName">Cognome</label> <input type="text"
-					class="form-control" id="lastName" placeholder="Il tuo cognome">
-			</div>
-			<div class="form-check form-check-inline">
-				<input class="form-check-input" type="radio" name="isoSex"
-					id="isoSex1" value="1"> <label class="form-check-label"
-					for="isoSex1">maschio</label>
-			</div>
-			<div class="form-check form-check-inline">
-				<input class="form-check-input" type="radio" name="isoSex"
-					id="isoSex2" value="2"> <label class="form-check-label"
-					for="isoSex2">femmina</label>
-			</div>
-			<div class="form-check form-check-inline">
-				<input class="form-check-input" type="radio" name="isoSex"
-					id="isoSex0" value="0"> <label class="form-check-label"
-					for="isoSex0">preferisco non dirlo</label>
+				<form:label path="firstName">Nome</form:label> <form:input
+					class="form-control" path="firstName" placeholder="Il tuo nome" />
+				<form:errors path="firstName" class="text-danger"></form:errors>
 			</div>
 			<div class="form-group">
-				<label for="emailAddress">Email</label> <input type="email"
-					class="form-control" id="emailAddress"
-					placeholder="nome.cognome@example.com" aria-describedby="emailHelp">
+				<form:label path="lastName">Cognome</form:label> <form:input
+					class="form-control" path="lastName" placeholder="Il tuo cognome" />
+				<form:errors path="lastName" class="text-danger"></form:errors>
+			</div><%--
+			<div class="form-check form-check-inline">
+				<form:radiobutton class="form-check-input" name="isoSex"
+					id="isoSex1" value="1" /> <form:label class="form-check-label"
+					for="isoSex1">maschio</form:label>
+			</div>
+			<div class="form-check form-check-inline">
+				<form:radiobutton class="form-check-input" name="isoSex"
+					id="isoSex2" value="2" /> <form:label class="form-check-label"
+					for="isoSex2">femmina</form:label>
+			</div>
+			<div class="form-check form-check-inline">
+				<form:radiobutton class="form-check-input" name="isoSex"
+					id="isoSex0" value="0" /> <form:label class="form-check-label"
+					for="isoSex0">preferisco non dirlo</form:label>
+			</div> --%>
+			<div class="form-group">
+				<form:label path="emailAddress">Email</form:label> <form:input type="email"
+					class="form-control" path="emailAddress"
+					placeholder="nome.cognome@example.com" aria-describedby="emailHelp" />
 				<small id="emailHelp" class="form-text text-muted">Non la
 					condivideremo con nessuno.</small>
+				<form:errors path="emailAddress" class="text-danger"></form:errors>
 			</div>
 			<div class="form-group">
-				<label for="password">Password</label> <input type="password"
-					class="form-control" id="password"
-					placeholder="Il nome del tuo animale domestico">
+				<form:label path="password">Password</form:label> <form:password
+					class="form-control" path="password"
+					placeholder="Il nome del tuo animale domestico" />
+				<form:errors path="password" class="text-danger"></form:errors>
 			</div>
 			<div class="form-group">
-				<label for="passwordCheck">Conferma password</label> <input
-					type="password" class="form-control" id="passwordCheck"
-					placeholder="Ripeti il nome del tuo animale domestico">
+				<form:label path="passwordCheck">Conferma password</form:label> <form:password
+					class="form-control" path="passwordCheck"
+					placeholder="Ripeti il nome del tuo animale domestico" />
+				<form:errors path="passwordCheck" class="text-danger"></form:errors>
 			</div>
 			<div class="form-group form-check">
-				<input type="checkbox" class="form-check-input" id="privacyConsent">
-				<label class="form-check-label" for="privacyConsent">Ho
+				<form:checkbox class="form-check-input" path="privacyConsent" />
+				<form:label class="form-check-label" path="privacyConsent">Ho
 					letto e accetto l'informativa sulla privacy e le condizioni di
-					servizio.</label>
+					servizio.</form:label><br>
+				<form:errors path="privacyConsent" class="text-danger"></form:errors>
 			</div>
-			<button type="submit" class="btn btn-primary">Registrami</button>
-		</form>
+			<form:button type="submit" class="btn btn-primary">Registrami</form:button>
+		</form:form>
 	</div>
 	<script type="text/javascript"
 		src="${ resources }/jquery/3.4.1/jquery.js"></script>
